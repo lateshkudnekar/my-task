@@ -1,0 +1,30 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="main-nav">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="/" onclick="$(this).scrollToId('#carousel-block', 800); return false">STANHEX</a>
+    </div>
+    <div class="navbar-collapse collapse in" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right navbar-toggler" data-toggle="collapse" data-target="#main-navbar">
+        <li><a href="/about" data-slug="about-us" onclick="$(this).scrollToId('#about-block', 800, 30); return false">About</a></li>
+        <li><a href="/applications" data-slug="applications" onclick="$(this).scrollToId('#applications-block', 800, -10); return false">Applications</a></li>
+        <li><a href="/products"  data-slug="products" onclick="$(this).scrollToId('#products-block', 800, -10); return false">Products</a></li>
+        <li><a href="http://standardradiators.com/contact.asp" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Careers</a></li>
+        <li class="contact-link"><a href="/contact" data-slug="contact-us" onclick="$(this).scrollToId('#contact-block', 800, -10); return false">Contact</a></li>
+        <li>
+          <a href="#0" class="cd-cart" onclick="$(this).scrollToId('#contact-block', 800); return false">
+        		<span class="int">0</span> Selected. Send Inquiry.
+        	</a>
+        </li>
+        <% if @admin %>
+          <li><a href="/signout">Logout</a></li>
+        <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="full-container" id="products-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h3>Products</h3>
+          <div class="row">
+            <div class="col-md-8">
+              <p>If you're looking for Pinterest-like presentation of thumbnails of varying heights and/or widths, you'll need to use a third-party plugin such.</h2>
+            </div>
+            <div class="col-md-3 pull-right text-right">
+              <span class="instruction-label">Move mouse over images for more.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="filters-list">
+          <li>
+            <a class="active" href=# onclick="$(this).categoryFilter('all')"> All</a>
+          </li>
+          <% @categories.each do |category|%>
+            <% unless category.title=='None' %>
+              <li>
+                <a href=# onclick="$(this).categoryFilter(<%=category.id%>)"><%=category.title %></a>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="products-grid">
+    <% @products.each do |product| %>
+      <%= partial(:"partials/_product_block", :layout => false, :locals=> { product: product }) %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Categories (<%=@categories.count%>) <a class="btn btn-link" href="/categories">Show all</a><a class="btn btn-link" href="/categories"></i>  <i class="fa fa-plus-circle" aria-hidden="true"></i> New Category</a></h2>
+    <div id="category-list">
+      <ul>
+        <% @categories.take(5).each do |category| %>
+          <%= partial(:"partials/_category_block", :locals=> { category: category, showPriority: false }) %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2>Applications (<%=@applications.count%>) <a class="btn btn-link" href="/admin/applications">Show all</a><a class="btn btn-link" href="/applications/new"></i>  <i class="fa fa-plus-circle" aria-hidden="true"></i> New Application</a></h2>
+    <ul>
+      <% @applications.take(5).each do |application| %>
+        <%= partial(:"partials/_admin_application_block", :locals => { application: application }) %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Products (<%=@products.count%>) <a class="btn btn-link" href="/admin/products">Show all</a><a class="btn btn-link" href="/products/new"></i>  <i class="fa fa-plus-circle" aria-hidden="true"></i> New Product</a></h2>
+    <ul>
+      <% @products.take(5).each do |product| %>
+        <%= partial(:"partials/_admin_product_block", :locals => { product: product }) %>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<li id="application-item-<%=application.id%>">
+    <div class="content">
+      <span class="caption">
+          <span id="application-title-<%=application.id%>"><%= application.title %></span>
+        <a class="btn btn-link"  href="/applications/<%=application.id%>/edit"></i> <i class="fa fa-pencil" aria-hidden="true"></i></a> | <a class="btn btn-link" onclick="$.fn.deleteApplication('<%=application.id%>')"></i>  <i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+      </span>
+    </div>
+</li>

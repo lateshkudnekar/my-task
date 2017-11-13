@@ -1,0 +1,38 @@
+<div class="page-nav">
+  <div class="container">
+      <h4 class="page-title">Applications</h4>
+      <ol class="breadcrumb pull-right">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Applications</a>
+        </li>
+      </ol>
+  </div>
+</div>
+
+<div class="full-container" id="applications-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="page-header">
+          <h3>Applications</h3>
+          <span class="line" data-bottom-top="width: 100px;" data-center-top="width: 300px;" data-top="width: 400px;"></span>
+          <div id="application_intro">
+            <%= markdown(@cms.application_intro) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-btns" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" onclick="$(this).scrollToNext('#application-items', 400, 'left')"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default btn-next" onclick="$(this).scrollToNext('#application-items', 400, 'right')"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+  <div id="application-items">
+    <ul class="inner">
+      <%=partial(:"partials/_application_block", :layout => false, :locals => { :applications => @applications })%>
+    </ul>
+  </div>
+</div>

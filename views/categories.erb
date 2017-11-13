@@ -1,0 +1,29 @@
+<div class="full-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h3>Categories</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="category-list" class="list-group">
+      <li class="list-group-item">
+        <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" class="form-control" id="newCategory" placeholder="New Category Title" name="category_title">
+              </div>
+              <button type="button" class="btn btn-default" onclick="$.fn.saveCategory()"> save</button>
+          </div>
+        </form>
+      </li>
+      <div id="categories">
+        <% @categories.each do |category| %>
+          <%= partial(:"partials/_category_block", :layout => false, :locals=> { category: category, showPriority: true }) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

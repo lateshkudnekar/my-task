@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<%= erb :"partials/_head" %>
+	<body>
+		<%= erb :"partials/_admin_navigation" %>
+		<div id="main">
+			<% if flash[:notice] %>
+				<div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
+			<% end %>
+      <%if @error then %>
+          <div class="alert alert-error"><%=@error%></div>
+      <% end %>
+			<div class="container">
+      	<%= yield %>
+			</div>
+		</div>
+    <%= erb :"partials/_scripts" %>
+  </body>
+</html>

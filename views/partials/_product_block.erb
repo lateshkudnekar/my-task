@@ -1,0 +1,51 @@
+  <li class="product-grid-item thumbscrubber cd-customization" id="product-item-<%= product.id %>">
+    <div class="status-icon">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+      <span class="text">Added to inquiry cart</span>
+    </div>
+    <button class="add-to-cart btn btn-text" id="button-<%=product.id%>"
+            onclick="$(this).addToCart(this, '<%= product.title %>', <%= product.id %>, '2-product2.jpg')">+ Inquire</button>
+            <% if @admin %>
+              <a href="/products/<%=product.id %>/edit" class="edit-product btn btn-text pull-left"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <% end %>
+      <% if !product.images.empty?%>
+      <div id="product-carousel-<%= product.id %>" class="carousel" data-interval="2000">
+        <!-- Indicators -->
+        <% if product.images.count > 1 %>
+          <ol class="carousel-indicators">
+            <% product.images.each_with_index do |image, index| %>
+              <li data-target="#product-carousel-<%= product.id %>" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+            <% end %>
+          </ol>
+        <% end %>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% product.images.each_with_index do |image, index| %>
+            <div class="item <%= 'active' if index == 0 %>" style="background-image: url('/images/product/<%= image.image %>')">
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+      <% end %>
+      <div class="content">
+        <!-- <div class="controls">
+          <% if product.description %>
+            <button class="btn btn-text" onclick="$(this).setActive(this)"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</button>
+          <% end %>
+          <% if product.pdf %>
+            <a href="#" class="btn btn-text"><i class="fa fa-download" aria-hidden="true"></i> PDF</a>
+          <% end %>
+        </div> -->
+
+        <!-- Hiding description and PDF until ready to upload-->
+        <span class="caption">
+          <%= product.title %>
+        </span>
+      </div>
+      <div class="technical-details">
+        <h4>Technical Details</h4>
+        <p><%= product.description.nil? ? 'No Description' : product.description %></p>
+      </div>
+  </li>

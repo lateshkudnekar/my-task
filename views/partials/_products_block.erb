@@ -1,0 +1,3 @@
+<% @products.each do |product| %>
+  <%= partial(:"partials/_product_block", :layout => false, :locals => { product: product }) %>
+<% end %>

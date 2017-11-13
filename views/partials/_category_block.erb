@@ -1,0 +1,40 @@
+  <li id="category-item-<%=category.id%>" class="list-group-item">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <span class="caption">
+              <span id="category-title-<%=category.id%>"><%= category.title %></span>
+            </span>
+          </div>
+          <div class="col-md-4 text-right">
+            <a class="btn btn-link" onclick="$.fn.showedit('#edit-modal-<%=category.id%>')"  ></i> <i class="fa fa-pencil" aria-hidden="true"></i></a> | <a class="btn btn-link" onclick="$.fn.deleteCategory('<%=category.id%>')"></i>  <i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+            <% if showPriority %>
+            | <a class="btn btn-link" onclick="$.fn.changeCategoryPriority(<%=category.id%>,'up')"  ></i> <i class="fa fa-arrow-up" aria-hidden="true"></i></a><a class="btn btn-link" onclick="$.fn.changeCategoryPriority(<%=category.id%>,'down')"  ></i> <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </li>
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div id="edit-modal-<%=category.id%>" class="modal fade" role="dialog"  data-backdrop="false">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit <%= category.title%></h4>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control" id="editCategorytitle-<%=category.id%>" placeholder="Category Title" name="category_title" value="<%=category.title%>">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="$.fn.editCategory(<%=category.id%>)"> save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,258 @@
+<div id="carousel-block">
+    <div  class="item active" id="slide-1" style="background-image: url('/images/welcome.jpg');" data-0="background-position:0px 0px;" data-500="background-position:0 -50px;">
+      <div class="content" data-0="transform: translateY(0px); opacity:1;" data-500="transform: translateY(-40px); opacity:0;">
+        <% if @admin %>
+          <a href="#" class="btn btn-default btn-sm" onclick="$.fn.showedit('#edit-welcome')"><span class="hidden-xs">Change Image </span><i class="fa fa-upload" aria-hidden="true"></i></a>
+        <% end %>
+        <h1>Welcome to <span>Standard Radiators</span></h1>
+        <p class="lead">
+          Standard Radiators offers customised cooling solutions to performance-critical industries around the world.</p>
+        <a href="#" class="btn btn-down scrollto scrollablediv" data-slug="" onclick="$(this).scrollToId('#about-block', 800, 30); return false">
+          <svg width="78px" height="46px" viewBox="0 0 78 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                  <g id="arrow" transform="translate(39.000000, 23.000000) rotate(90.000000) translate(-39.000000, -23.000000) translate(16.000000, -15.000000)" stroke="#FFFFFF">
+                      <polyline id="Shape" points="0.375 0.375 45.63 38.087 0.375 75.8"></polyline>
+                  </g>
+              </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+</div>
+
+<div id="about-block" class="scrollablediv" data-slug="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10" data-100-bottom="opacity:0; transform: translateY(40px);" data-center="opacity: 1; transform: translateY(0px);">
+        <% if @admin %>
+          <a href=# class="pull-right" onclick="$.fn.showModal('#edit-content', 'stanhex_intro', 'Introduction')"><i class="fa fa-pencil" aria-hidden='true'></i></a>
+        <% end %>
+        <h3 class="page-title">
+          Standard Radiators
+        </h3>
+        <h5>Your Cooling Solutions Partner</h5>
+      </div>
+
+      <div class="col-md-8">
+        <div id="stanhex_intro" data-100-bottom="opacity:0; transform: translateY(60px);" data-bottom="opacity: 1;transform: translateY(0px);">
+          <%= markdown(@cms.stanhex_intro) %>
+        </div>
+        <div id="info-strip" class="row">
+          <div class="col-md-3 info-item">
+            <span class="value"><span class="counter" data-count="100">0</span>+</span> Clients
+          </div>
+          <div class="col-md-5 info-item">
+            <span class="value"><span class="counter" data-count="15">0</span>+</span>Countries being supplied
+          </div>
+          <div class="col-md-4 info-item">
+            <span class="value"><span class="counter" data-count="55">0</span>+</span>Years In Operation
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="full-container scrollablediv" data-top-bottom="background-position:0 20px;" data-slug="about-us">
+  <div class="container" id="slide-2">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="/images/about-us.jpg">
+          <div class="caption">
+            <h4>About Us</h4>
+            <span>
+              Lorem ipsum donec id elit non mi porta gravida at eget metus.
+              <a href="/sr-meta" class="btn btn-link pull-right">More</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="/images/about-us.jpg">
+          <div class="caption">
+            <h4>Design & Engineering</h4>
+            <span>
+              Lorem ipsum donec id elit non mi porta gravida at eget metus.
+              <a href="/sr-meta" class="btn btn-link pull-right">More</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="/images/about-us.jpg">
+          <div class="caption">
+            <h4>Manufacturing</h4>
+            <span>
+              Lorem ipsum donec id elit non mi porta gravida at eget metus.
+              <a href="/sr-meta" class="btn btn-link pull-right">More</a>
+            </span>
+          </div>
+        </div> 
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <a href="http://stanhex.com">
+            <img src="/images/about-us.jpg">
+          </a>
+          <div class="caption">
+            <h4>Stanhex</h4>
+             <span>
+              Lorem ipsum donec id elit non mi porta gravida at eget metus.
+              <a href="http://stanhex.com" class="btn btn-link pull-right">Go to stanhex</a>
+            </span>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="full-container scrollablediv" id="applications-block" data-slug="applications">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="page-header">
+          <h3>Applications</h3>
+          <% if @admin %>
+            <a href=# onclick="$.fn.showModal('#edit-content', 'application_intro', 'Application Introduction')"><i class="fa fa-pencil" aria-hidden='true'></i></a>
+          <% end %>
+          <span class="line" data-bottom-top="width: 100px;" data-center-top="width: 300px;" data-top="width: 400px;"></span>
+          <div id="application_intro">
+            <%= markdown(@cms.application_intro) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-btns" role="group" aria-label="...">
+    <button type="button" class="btn btn-default" onclick="$(this).scrollToNext('#application-items', 400, 'left')"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default btn-next" onclick="$(this).scrollToNext('#application-items', 400, 'right')"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+  <div id="application-items">
+    <ul class="inner">
+      <%= partial(:"partials/_application_block", :layout => false, :locals => { :applications => @applications })%>
+    </ul>
+  </div>
+
+</div>
+
+<div class="full-container scrollablediv" id="products-block" data-slug="products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h3>Products</h3>
+          <% if @admin %>
+            <a href=#  onclick="$.fn.showModal('#edit-content', 'product_intro', 'Product Introduction')"><i class="fa fa-pencil" aria-hidden='true'></i></a>
+          <% end %>
+          <span class="line" data-bottom-top="width: 100px;" data-center-top="width: 300px;" data-top="width: 400px;"></span>
+          <div class="row">
+            <div class="col-md-8">
+              <div id='product_intro'>
+                <%= markdown(@cms.product_intro) %>
+              </div>
+              <p class="small">
+                Download Catalogue (PDF): <a href="https://s3.ap-south-1.amazonaws.com/stanhex/catalogue-pdfs/SX+CATALOGUE+ALL+PAGES.pdf" target="_blank">Oil Cooler Range</a> | <a href="https://s3.ap-south-1.amazonaws.com/stanhex/catalogue-pdfs/AX+CATALOGUE+ALL+PAGES.pdf" target="_blank">Air Cooler Range</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <ul class="filters-list">
+          <% @categories.each do |category|%>
+            <% unless category.title=='None' %>
+              <li>
+                <a id="category-<%=category.id%>" href=# onclick="$(this).categoryFilter(this, <%=category.id%>); return false;" class="<%='active' if @active_category==category.id%>"><%=category.title %></a>
+              </li>
+            <% end %>
+          <% end %>
+          <li>
+            <a id="all-filter" href=# onclick="$(this).categoryFilter(this, 'all');return false;"> All</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="products-grid">
+    <ul>
+      <%if !@products.blank?%>
+        <%@products.each do |product| %>
+          <%= partial(:"partials/_product_block", :layout => false, :locals=> { product: product }) %>
+        <%end%>
+      <%end%>
+    </ul>
+  </div>
+</div>
+
+
+<div class="full-container scrollablediv" id="contact-block"  data-slug="contact-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h3>Contact Us</h3>
+          <span class="line" data-bottom-top="width: 100px;" data-center-top="width: 300px;" data-top="width: 400px;"></span>
+          <p>
+            Get in touch to find out how our brand can contribute to yours.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+        <div class="col-md-12 col-sm-4 col-xs-12">
+          <div class="row contact-item">
+            <div class="col-md-2 col-xs-3 text-right">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-10 col-xs-9">
+              STANHEX is a trademark of:
+              <address>Standard Radiators Pvt. Ltd.,<br />
+              1/12, Industrial Estate, Gorwa,<br />
+              Vadodara -390016, Gujarat, India</address>
+            </div>
+          </div>
+          <div class="row contact-item">
+            <div class="col-md-2 col-xs-3 text-right">
+              <i class="fa fa-envelope-o" aria-hidden="true" ></i>
+            </div>
+            <div class="col-md-10 col-xs-9">
+              <a href="mailto:#">sales@stanhex.com</a>
+            </div>
+          </div>
+          <div class="row contact-item">
+            <div class="col-md-2 col-xs-3 text-right">
+              <i class="fa fa-phone-square" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-10 col-xs-9">
+              Phone: +91-265-2280616 / 417 <br />
+              Fax: +91-265-2280522
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <div class="col-md-8">
+        <%=partial(:"partials/_contact_block", :layout => false, :locals => { :title => @title })%>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="full-container" id="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3690.629801453006!2d73.1630254!3d22.3298363!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeb2a42e4391a962a!2sStandard+Radiators+Private+Limited!5e0!3m2!1sen!2sin!4v1492844360993" id="map" width="600" height="450" frameborder="0" style="border:0" scrolling="no" allowfullscreen></iframe>
+</div>
+
+<%=partial(:"partials/_cms_modals", :layout => false)%>

@@ -1,0 +1,64 @@
+<div class="container top-padded">
+	<div class="form-group">
+		<label for="category_id">Category</label>
+		<select name="category_id" class="form-control">
+			<% @categories.each do |category| %>
+				<option value="<%= category.id %>" <%="selected" if (category == @product.category) %> ><%= category.title %></option>
+			<% end %>
+		</select>
+	</div>
+	<% fieldset(:product) do |f| %>
+
+  	<div class="form-group">
+  		<%= f.label :title, "Title" %>
+  		<%= f.input :title, :value => @product.title, class: "form-control" %>
+  	</div>
+
+		<div class="form-group">
+			<%= f.label :description, "Description" %>
+			<%= f.textarea :description, content="#{@product.description}", { :rows => 10, class: "form-control" } %>
+		</div>
+
+		<div class="form-group">
+			<label class="btn btn-default btn-sm" >
+				<input id="pdf" type=file name='pdf' class="hidden" accept="application/pdf">
+				Select PDF
+			</label>
+		</div>
+		<input type=hidden name=id value="<%=@product.id%>">
+
+  <% end %> <!--End Fieldset-->
+
+	<div class="form-group">
+	<% @applications.each do |application| %>
+			<lable for="<%=application.id%>"> <input id="<%=application.id%>" type='checkbox' name='applications[]' value="<%=application.id%>" <%="checked" if @product.applications.include?(application)%> > <%=application.title%></label>
+	<% end %>
+	</div>
+
+	<div class="form-group">
+		<label class="btn btn-default btn-sm" for="file-1">
+			<input type="file" name="photo[]" id="file-1" class="hidden" onchange="handleFileSelect(this)" accept="image/gif, image/jpeg, image/png" multiple/>
+			Select Images
+		</label>
+	</div>
+
+	<output id="list">
+
+	</output>
+	<hr>
+	<div class="row">
+		<% if !@product.images.empty? %>
+			<%@product.images.each do |image|%>
+					<span id="image-<%=image.id%>">
+						<input <%= "checked" if (image.id == @product.images[0].id) %> type=radio name=priority value="<%=image.image%>>" onclick="setPriority(<%=image.id%>,<%=@product.id%>)">
+						<img class="img" src="/images/product/thumbs/<%=image.image %>" width="200px" height="150px" />
+						<p class="glyphicon glyphicon-remove" onclick="deleteImage(<%=image.id%>,'image-<%=image.id%>')"></p>
+					</span>
+			<%end%>
+		<% end %>
+	</div>
+	<div class="row top-padded">
+		<%= submit "Save Product", class: "btn btn-default "%>
+		<button class="btn btn-default" onclick="$(this).deleteProduct(<%= @product.id %>)">Delete</button>
+	</div>
+</div>

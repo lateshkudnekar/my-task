@@ -1,0 +1,3 @@
+<% categories.each do |category| %>
+  <%= partial(:"partials/_category_block", :layout => false, :locals=> { category: category, showPriority: true }) %>
+<% end %>

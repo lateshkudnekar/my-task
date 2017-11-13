@@ -1,0 +1,8 @@
+<li id="product-item-<%=product.id%>">
+    <div class="content">
+      <span class="caption">
+          <span id="product-title-<%=product.id%>"><%= product.title %></span>
+        <a class="btn btn-link" href="/products/<%=product.id%>/edit"></i> <i class="fa fa-pencil" aria-hidden="true"></i></a> | <a class="btn btn-link" onclick="$.fn.deleteProduct('<%=product.id%>')"></i>  <i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+      </span>
+    </div>
+</li>

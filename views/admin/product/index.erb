@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Products </h2>
+    <ul>
+      <% @products.each do |product| %>
+        <%= partial(:"partials/_admin_product_block", :locals => { product: product }) %>
+      <% end %>
+    </ul>
+  </div>
+</div>

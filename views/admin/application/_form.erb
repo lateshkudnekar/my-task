@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="col-md-12">
+		<% fieldset(:application) do |f| %>
+	  	<div class="form-group">
+	  		<%= f.label :title, "Title" %>
+	  		<%= f.input :title, :value => @application.title, class: "form-control" %>
+	  	</div>
+
+			<div class="form-group">
+				<%= f.label :body, "Description" %>
+				<%= f.textarea :body, content="#{@application.body}", { :rows => 10, class: "form-control" } %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :additional_detail, "Additional Details" %>
+				<%= f.textarea :additional_detail, content="#{@application.additional_detail}", { :rows => 15, class: "form-control" } %>
+			</div>
+			<div class="form-group">
+				<% if @application.image %>
+					<img src="/images/<%= @application.image %>" height="150px" width="200px" class="thumbnail" />
+				<% end %>
+				<label class="btn btn-default btn-sm" for="file-1">
+					<input type="file" name="photo" id="file-1" onchange="showPreview(this)" class="hidden" accept="image/gif, image/jpeg, image/png"/>
+					Select Image
+				</label>
+
+			</div>
+			<div>
+				<label>Preview
+				<img src="#" height="150px" width="200px" id="filepreview" style="display: none;"  class="thumbnail"/></label>
+			</div>
+	  <% end %> <!--End Fieldset-->
+	  <%= submit "Save ", :class => "btn btn-default"%> <button onclick="$(this).deleteApplication(<%= @application.id %>)" class="btn btn-default">Delete</button>
+
+	</div>
+</div>

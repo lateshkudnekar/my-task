@@ -1,0 +1,49 @@
+<!-- Edit welcome image -->
+<div id="edit-welcome" class="modal fade" role="dialog"  data-backdrop="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        Change Background Image
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="image_upload"  enctype="multipart/form-data">
+          <p> <img class='img-thumbnail' id="filepreview" src="/images/welcome.jpg"  ></p>
+          <label class="btn btn-default btn-sm" for="my-file-selector">
+            <input id="my-file-selector" type="file" style="display:none;" onchange="showPreview(this)" name="image">
+            Upload
+          </label>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" onclick="$.fn.uploadImage()"> save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Edit content-->
+<div id="edit-content" class="modal fade" role="dialog"  data-backdrop="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" id="modal-title">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+          <textarea id="edit-container"> </textarea>
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" id="field" value="">
+        <button type="button" class="btn btn-default" onclick="$.fn.saveContent()"> save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<%= form("/applications/#{@application.id}", method=:put, :id => @application.id,:enctype => "multipart/form-data") %>
+	<%= erb :"admin/application/_form" %>
+</form>

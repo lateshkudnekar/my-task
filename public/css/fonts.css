@@ -1,0 +1,18 @@
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/331a23");
+
+
+@font-face {font-family: 'Geometria-ExtraLight';src: url('../webfonts/331A23_0_0.eot');src: url('../webfonts/331A23_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/331A23_0_0.woff2') format('woff2'),url('../webfonts/331A23_0_0.woff') format('woff'),url('../webfonts/331A23_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Geometria-Bold';src: url('../webfonts/331A23_1_0.eot');src: url('../webfonts/331A23_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/331A23_1_0.woff2') format('woff2'),url('../webfonts/331A23_1_0.woff') format('woff'),url('../webfonts/331A23_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Geometria';src: url('../webfonts/331A23_2_0.eot');src: url('../webfonts/331A23_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/331A23_2_0.woff2') format('woff2'),url('../webfonts/331A23_2_0.woff') format('woff'),url('../webfonts/331A23_2_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Geometria-Thin';src: url('../webfonts/331A23_3_0.eot');src: url('../webfonts/331A23_3_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/331A23_3_0.woff2') format('woff2'),url('../webfonts/331A23_3_0.woff') format('woff'),url('../webfonts/331A23_3_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Geometria-Italic';src: url('../webfonts/331A23_4_0.eot');src: url('../webfonts/331A23_4_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/331A23_4_0.woff2') format('woff2'),url('../webfonts/331A23_4_0.woff') format('woff'),url('../webfonts/331A23_4_0.ttf') format('truetype');}

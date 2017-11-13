@@ -1,0 +1,39 @@
+<% applications.each do |application|%>
+  <li class="application-item" onclick="$(this).scrollToElement('#application-items',this, 800)">
+    <div class="app-inner">
+      <div class="img-container">
+        <img src="/images/<%=application.image%>"/>
+        <header>
+          <h3><%=application.title%></h3>
+          <div class="lines">
+            <span class="line"></span>
+            <span class="line line-2"></span>
+          </div>
+        </header>
+      </div>
+      <div class="content">
+
+        <div class="application-details">
+          <%= markdown(application.additional_detail)%>
+          <% if @admin %>
+            <a href="/applications/<%=application.id%>/edit" class="pull-right"><i class="fa fa-pencil " aria-hidden=true></i></a>
+          <% end %>
+          <% if application.products.length > 0 %>
+           <div class="related-products">
+            <h4>Related Products</h4>
+            <ul>
+              <% application.products.each do |product| %>
+              <li>
+                <a href="#" onclick="$(this).scrollToProduct('<%=product.category.id%>','#product-item-<%= product.id %>', 400, -80); return false;"><%= product.title %></a>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        <% else %>
+          <a href="/contact"  onclick="$(this).scrollToId('#contact-block', 800, 20); return false" class="btn btn-primary btn-xs">Contact Us</a>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </li>
+<%end%>
